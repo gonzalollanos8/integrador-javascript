@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="shortcut icon" href="./img/icons/logofavicon.svg">
+    <link rel="stylesheet" href="./styles/mediaquerys.css">
+    <title>Zaloshoes</title>
+</head>
+<body>
+<header>
+    <div class="logo">
+        <img src="./img/logo zalo.png" alt="Zaloshoes">
+    </div>
+
+    <nav class="options">
+        <ul class="nav-options">
+            <li class="nav-options option"><a href="#home">HOME</a></li>
+            <li class="nav-options option"><a href="#about">ABOUT</a></li>
+            <li class="nav-options option"><a href="#Products">PRODUCTS</a></li>
+            <li class="nav-options option"><a href="#Contact">CONTACT</a></li>
+        </ul>
+    </nav>
+
+<!-- RESPONSIVE -->
+    <nav class="menu-burger">
+        
+        <label for="toggle-menu"><img src="./img/icons/menuResponsive.svg" alt="menu"></label>
+        <input type="checkbox" id="toggle-menu"/>
+
+        <ul class="nav-options">
+            <li class="nav-options option"><a href="#home">HOME</a></li>
+            <li class="nav-options option"><a href="#about">ABOUT</a></li>
+            <li class="nav-options option"><a href="#Products">PRODUCTS</a></li>
+            <li class="nav-options option"><a href="#Contact">CONTACT</a></li>
+            
+            <div class="action-responsive">
+                <img src="./img/icons/user.svg" alt="user">
+                <a href="./routers/login.html">LOG IN</a>
+            </div>
+            <div class="action-responsive">
+                <img src="./img/icons/heart.svg" alt="favorite">
+                <a href="#">FAVORITE</a>
+            </div>
+        </ul>
+        </nav>
+<!-- RESPONSIVE -->
+
+    <div class="header-action">
+        <div class="action-desktop">
+            <a href="./routers/login.html"><img src="./img/icons/user.svg" alt="user"></a>
+        </div>
+        <div class="action-desktop">
+            <a href="#"><img src="./img/icons/heart.svg" alt="favorite"></a>
+        </div>
+        <div class="action">
+            <a href="#"></a><img src="./img/icons/buycart.svg" alt="cart"></a>
+        </div>
+    </div>
+
+</header>
+<main>
+    <section id="home">
+        <div class="hero">
+            <img src="./img/logo name primary.png" alt="Zaloshoes">
+        </div>
+    </section>
+    <section id="about">
+            <div class="about-info-cards">    
+                <div class="card">
+                    <img class="card-1" src="./img/zapacard 1.png" alt="shoes">
+                    <p>SHOES</p>
+                </div>
+                <div class="card">
+                    <img class="card-3" src="./img/clothescard 1.png" alt="clothes">
+                    <p>CLOTHES</p>
+                </div>
+                <div class="card">
+                    <img class="card-2" src="./img/accesorycard 1.png" alt="accesory">
+                    <p>ACCESORY</p>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <h1>About us</h1>
+                <p>Discover the essence of urban fashion at <span>Zalo shoes.</span> With a unique selection of sneakers and streetwear, we offer you the chance to stand out with every step you take. Our collection blends design and comfort to cater to your fashion desires. Express yourself and showcase your authenticity with <span>Zalo shoes.</span> ! Join us and immerse yourself in urban culture with our exclusive apparel. Shop now and embrace the trend!</p>
+            </div>
+    </section>
+    <section class="hero-secondary">
+            <div class="img-container">
+            <div class="hero-secondary-img-1">
+                <img src="./img/background/tony hawk vans background.png" alt="tony hawk">
+            </div>
+            <div class="hero-secondary-img-2">
+                <img src="./img/background/messi background.png" alt="lionel messi">
+            </div>
+            <div class="hero-secondary-img-3">
+                <img src="./img/background/jordan background.png" alt="jordan">
+            </div>
+            </div>
+            <div class="hero-cta">
+                <h1>READY?</h1>
+            </div>
+    </section>
+
+    <section id="Products">
+
+        <div class="Products-actions">
+            <div class="title">
+                <h3>Products</h3>
+            </div>
+
+            <div class="filters">
+                <div class="filters-btn">
+                    <img src="./img/icons/Vector svg.svg" alt="filter">
+                    <span>filter</span>
+                <ul id="dropdown">
+                    <li class="category" data-category="shoes">Shoes</li>
+                    <li class="category" data-category="accesory">Accesory</li>
+                    <li class="category" data-category="clothes">Clothes</li>
+                    <li class="category active">All</li>
+                </ul>
+                </div>
+
+
+                <!-- AGREGAR DATA SET A LAS CATEGORIAS -->
+                <div class="filters-btn"> 
+                    <img src="./img/icons/order.svg" alt="filter">
+                    <span>rank</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="Products-card"></div>
+    
+        <div class="seeMore">
+            <!-- arreglar este boton -->
+                <button>See more +</button>
+        </div>
+    </section>
+
+    <section id="btn-cta">
+        <div class="btn-log">
+            <img src="./img/icons/user.svg" alt="user">
+            <a href="./routers/login.html"><span href="./routers/login.html">Log in</span></a>
+        </div>
+
+        <div class="btn-up">
+            <img src="./img/icons/arrowup.svg" alt="up">
+            <a href="#home"><span class="btn-up">Go up</span></a>
+        </div>
+    </section>
+
+    <!-- CONTACTS -->
+    <section id="Contact">
+        <div class="contact-section-1">
+            <div class="contact-direct">
+                <h2>Contact us</h2>
+                <div class="contact-direct-email">
+                <img src="./img/icons/mail.svg" alt="mail">
+                <span>zaloshoes@shoes.com</span>
+                </div>
+                <div class="contact-direct-phone">
+                <img src="./img/icons/whatsapp.svg" alt="whatsapp">
+                <span>11 5860-3871</span>
+                </div>
+            </div>
+
+
+            <div class="newletter">
+                    <h2>Newletter</h2>
+
+                        <div class="input-group">
+                            <input type="email" class="input" id="Email" name="Email" placeholder="zaloshoes@email.com" autocomplete="off">
+                            <input class="button--submit" value="Subscribe" type="submit">
+                        </div>
+            </div>
+        </div>
+        <div class="contact-section-2">
+            <div class="contact-socialmedia">
+                <h2>Social Media</h2>
+                
+                <ul class="icons-social">
+                        <li class="icon">
+                            <img src="./img/icons/facebook.svg" alt="facebook">
+                        </li>
+                        <li class="icon">
+                            <img src="./img/icons/instagram.svg" alt="instagram">
+                        </li>
+                        <li class="icon">
+                            <img src="./img/icons/tik_tok.svg" alt="tik tok">
+                        </li>
+                </ul>
+            </div>
+
+            <div class="contact-findus">
+                <h2>Find us</h2>
+                <iframe class="maps" src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31197.99741467822!2d-58.513948214813794!3d-34.723196694879206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses-419!2sar!4v1689072862666!5m2!1ses-419!2sar"  style="border:8;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <footer>
+            <h2>Zalo.dev</h2>
+            <p>&copy; copyright 2023</p>
+    </footer>
+
+
+
+</main>
+
+<script src="/javascript/data.js"></script>
+<script src="/javascript/index.js"></script>
+</body>
+</html>

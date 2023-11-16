@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,700;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;1,700&display=swap');
+
+:root{
+    --background: rgba(30, 30, 30, 1);
+    --back-cards: rgba(24, 24, 27, 1);
+    --letters: rgba(255, 255, 255, 1);
+    --letters-secondary: rgba(140, 140, 148, 1);
+    --btn: #006CD0;
+    --background-secondary: #FF3333;
+}
+/* ------------------CONFIG SECTION------------------------- */
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        /* border: red 1px solid; */
+}
+body{
+    background-color: var(--background);
+}
+
+
+#container{
+    margin: auto;
+    display: flex;
+    max-width: 1200px;
+    height: 100vh;
+}
+
+#logo{
+    display: none;
+}
+#section-login{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--back-cards);
+    color: var(--letters);
+}
+#section-login h1 span{
+    font-weight: 700;
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: var(--background-secondary);
+}
+
+.email , .password{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 15px 0;
+}
+.email input , .password input{
+    padding: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.remember{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    align-content: center;
+}
+.remember span{
+    font-size: 9px;
+    color: var(--letters-secondary);
+}
+
+.login{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.btn{
+    cursor: pointer;
+    margin: 15px 0;
+    background-color: var(--btn);
+    color: var(--letters);
+    font-weight: 800;
+    height: 35px;
+    width: 80px;
+    padding: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.line{
+    border: var(--letters-secondary) 1px solid;
+    margin: 15px;
+}
+.signup{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.signup label{
+    cursor: pointer;
+    font-family: 'Bai Jamjuree', sans-serif;
+    color: var(--background-secondary);
+}
+
+
+
+
+
+
+#section-img{
+    background-image: url(../img/dunk\ fondo\ hero\ 1.png);
+    background-size: 80vw 100vh;
+    /* background-repeat: no-repeat; */
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section-img img{
+    width: 90%;
+    padding: 50px;
+}

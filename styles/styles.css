@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,700;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;1,700&display=swap');
+
+:root{
+    --background: rgba(30, 30, 30, 1);
+    --back-cards: rgba(24, 24, 27, 1);
+    --letters: rgba(255, 255, 255, 1);
+    --letters-secondary: rgba(140, 140, 148, 1);
+    --btn: #006CD0;
+    --background-secondary: #FF3333;
+}
+/* ------------------CONFIG SECTION------------------------- */
+*{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        list-style: none;
+        text-decoration: none;
+        border: none;
+        outline: none;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        /* border: red 1px solid; */
+}
+body{
+    background-image: url(../img/dunk\ fondo\ hero\ 1.png);
+    background-repeat: no-repeat;
+    background-color: var(--background);
+}
+main{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* ------------------HEADER + NAVBAR---------------------------------------------- */
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: var(--background);
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    z-index: 4;
+}
+header img{
+    height: 30px;
+    width: 30px;
+}
+header .logo img{
+    height: 45px;
+    width: 35px;
+}
+
+.menu-burger{
+    display: none;
+}
+
+nav a{
+    color: var(--letters);
+}
+
+nav .nav-options{
+    display: flex;
+    gap: 15px;
+    
+}
+nav .action-responsive{
+    display: none;
+}
+
+.header-action{
+    display: flex;
+    gap: 15px;
+}
+/* -----------------------HERO------------------------------- */
+#home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin: 100px 0;
+
+}
+
+.hero img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+/* -------------------CARD INFO------------------------------- */
+#about{
+    width: 100%;
+}
+
+.about-info-cards{
+    display: flex;
+    justify-content:space-around;
+    /* align-items:baseline; */
+    margin-bottom: 25px;
+    padding: 25px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    align-content: space-around;
+    height: 45vh;
+    width: 40vh;
+    background-color: var(--back-cards);
+    color: var(--letters-secondary);
+    padding: 30px;
+    border: var(--letters-secondary) 1.5px solid;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.card p{
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Bai Jamjuree', sans-serif;
+}
+.card img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.about-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--letters);
+    gap: 10px;
+    padding: 20px;
+    background-color: var(--background-secondary);
+}
+
+.about-text p{
+    padding: 10px;
+    font-style: normal;
+}
+.about-text span{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* -------------------HERO SECONDARY---------------- */
+
+.hero-secondary{
+    max-width: 1200px;
+    /* background-color: var(--background-secondary); */
+    display: flex;
+    flex-direction: column;
+}
+.img-container{
+    display: flex;
+    z-index: 0;
+}
+.hero-secondary-img-1 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.hero-secondary-img-2 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.hero-secondary-img-3 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+.hero-cta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    height: 200px;
+    margin-top: -100px;
+    z-index: 1;
+    background-color: var(--background-secondary);
+}
+.hero-cta h1{
+    color: var(--letters);
+    font-size: 10rem;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* ---------------------PRODUCTS------------------------- */
+
+#Products{
+    max-width: 150vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 5px;
+}
+
+.Products-actions{
+    max-width: 200vh;
+    color: var(--letters);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.Products-actions h3{
+    text-align: left;
+    font-size: 2em;
+}
+
+.filters{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.filters-btn{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.filters-btn span{
+    font-weight: 700;
+}
+
+#dropdown{
+    /* display: none; */
+    position: relative;
+    min-width: 8em;
+    margin: 2em;
+    font-size: medium;
+}
+#dropdown *{
+    box-sizing: border-box;
+}
+
+#dropdown .active{
+    background-color: var(--background-secondary);
+    border-radius: 5px;
+    font-weight: 900;
+    outline: 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+
+.Products-card{
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.Products-card-item{
+    background-color:var(--back-cards);
+    color: var(--letters);
+    border: 1px solid white;
+    border-radius: 15px;
+    height: 400px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.Products-card-item .line{
+    padding: 10px;
+}
+
+.Products-card-item .one{
+    font-weight: 800;
+
+}
+.Products-card-item .one p{
+    font-size: 12px;
+    font-weight: 400;
+    font-style: normal;
+    color: var(--letters-secondary);
+}
+.Products-card-item .sec span{
+    font-size: 20px;
+    font-weight: 800;
+}
+.Products-card-item .thr{
+    text-align: end;
+}
+.Products-card-item .thr button{
+    /*display: flex;*/
+    cursor: pointer;
+    margin-bottom: 5;
+    /*align-items: flex-end;*/
+    gap: 10px;
+    border-radius: 10px;
+    background: var(--btn);
+    color: var(--letters);
+    font-weight: 800;
+    height: 35px;
+    width: 100px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+.Products-card-item img{
+    /*width: 250px;
+    */object-fit: contain;
+    border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -ms-border-radius: 15px 15px 0 0;
+    -o-border-radius: 15px 15px 0 0;
+}
+
+/* boton de ver mas */
+.seeMore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    /* background: #f6f7fb; */
+}
+.hidden{
+    display: none;
+}
+
+.seeMore button{
+    cursor: pointer;
+    margin-bottom: 5;
+    align-items: center;
+    border-radius: 10px;
+    background: var(--btn);
+    color: var(--letters);
+    font-weight: 800;
+    font-size: large;
+    height: 60px;
+    width: 150px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+
+/* ---------------------BTN CTA-------------------- */
+
+#btn-cta{
+    width: 100%;
+    height:50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--letters-secondary) 1px solid;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+
+}
+#btn-cta a{
+    color: var(--letters);
+}
+#btn-cta span{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: italic;
+    /* cursor: pointer; */
+}
+
+.btn-log{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: var(--background-secondary);
+    color: var(--letters);
+    gap: 10px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.btn-log img{
+    width: 30px;
+}
+
+.btn-up{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    color: var(--letters);
+}
+
+.btn-up img{
+    width: 30px;
+}
+
+/* ------------CONTACT-------------------- */
+#Contact{
+    width: 100%;
+    display: flex;
+    margin-top: 50px;
+    color: var(--letters);
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 100px;
+    background-color: var(--back-cards);
+    padding: 30px;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+.contact-section-1{
+    width: 50%;
+    padding: 0px 50px;
+}
+.contact-section-2{
+    width: 50%;
+    /* padding: 0px 50px; */
+}
+.contact-direct{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+.contact-direct-email{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    /* margin: 5px 0px; */
+    gap: 10px;
+}
+.contact-direct-phone{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    /* margin: 5px 0; */
+    gap: 10px;
+}
+
+
+/* ======newletter========= */
+.newletter{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.input {
+    min-height: 50px;
+    max-width: 150px;
+    padding: 0 1rem;
+    margin: 15px 0;    
+    color: var(--letters);
+    font-size: 15px;
+    border: 1px solid var(--btn);
+    border-radius: 6px 0 0 6px;
+    background-color: var(--letters);
+}
+.button--submit {
+    min-height: 50px;
+    padding: .5em 1em;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    background-color: var(--btn);
+    color: var(--letters);
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out;
+    -webkit-border-radius: 0 6px 6px 0;
+    -moz-border-radius: 0 6px 6px 0;
+    -ms-border-radius: 0 6px 6px 0;
+    -o-border-radius: 0 6px 6px 0;
+}
+.button--submit:hover {
+    background-color: #5e5dcd;
+}
+.input:focus, .input:focus-visible {
+    border-color: #3898EC;
+    outline: none;
+}
+/* ======SECTION 2 CONTACT========= */
+.contact-section-2{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.contact-socialmedia{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.icons-social{
+    display: flex;
+    gap: 100px;
+}
+.icon img{
+    width: 150%;
+}
+
+.contact-findus{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-findus iframe{
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+
+/* ----------------FOOTER------------------- */
+
+footer{
+    background-color: var(--back-cards);
+    color: var(--letters);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: italic;
+    font-weight: 700;
+    margin-top: 25px;
+    border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+    -ms-border-radius: 15px 15px 0 0;
+    -o-border-radius: 15px 15px 0 0;
+}

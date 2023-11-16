@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,700;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;1,700&display=swap');
+
+:root{
+    --background: rgba(30, 30, 30, 1);
+    --back-cards: rgba(24, 24, 27, 1);
+    --letters: rgba(255, 255, 255, 1);
+    --letters-secondary: rgba(140, 140, 148, 1);
+    --btn: #006CD0;
+    --background-secondary: #FF3333;
+}
+
+@media(max-width:768px){
+/* -----------HEADER Y NAV--------------- */
+body{
+    background-size:contain;
+}
+
+.logo{
+    order: 2;
+}
+nav{
+    display: none;
+    /* order: 1; */
+}
+.header-action{
+    order: 3;
+}
+.nav-options{
+    display: none;
+}
+.option{
+    display: none;
+}
+.options ul{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* height: calc(100vh - 70px); */
+    position: absolute;
+    /* top: 70px; */
+    background-color: var(--background);
+    left: 0;
+    display: none;
+}
+
+
+header .action-desktop{
+    display: none;
+}
+
+.menu-burger{
+    display: flex;
+}
+.menu-burger ul{
+    display: none;
+}
+
+#toggle-menu{
+    display: none;
+}
+#toggle-menu:checked ~ ul{
+    display: flex;
+}
+
+nav ul{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(100vh - 100px);
+    position: absolute;
+    top: 70px;
+    color: #fefefe;
+    left: 0;
+    display: none;
+    background-color: var(--background);
+}
+nav .action-responsive{
+    display: flex;
+    align-items: center;
+}
+/* -------------------CARD INFO------------------------- */
+#home{
+    margin-bottom: 20px;
+}
+
+.about-info-cards{
+    background-color: var(--back-cards);
+}
+.card{
+    height: 35vh;
+    width: 40vh;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+}
+.card p{
+    display: none;
+}
+
+.about-text{
+    background-color: var(--background-secondary);
+}
+/* -------------------CONTACT------------- */
+.contact-section-1{
+    padding: 0;
+}
+
+
+
+
+
+
+/* -----------------------------LOG IN-------------------------------------- */
+#logo{
+    display: flex;
+    margin-bottom: 20px;
+}
+#logo img{
+    width: 15vw;
+}
+
+#section-login{
+    width: 100%;
+}
+
+#section-img{
+    display: none;
+}
+
+}
+
+@media(max-width:550px){
+
+main{
+    width: 100vw;
+}
+
+.hero img{
+    width: 70vw;
+}
+#home{
+    margin-top: 50px;
+}
+
+/* --------ABOUT ---------- */
+.about-info-cards{
+    margin: 0;
+}
+.hero-cta h1{
+    font-size: 7rem;
+}
+
+#Contact{
+    flex-direction: column;
+    /* align-items: center;
+    justify-content: center;
+    align-content: center; */
+    
+}
+#Contact h2{
+    flex-direction: column;
+    
+}
+
+.contact-section-1{
+    width: 100%;
+    padding: 0;
+    /* align-items: center; */
+}
+.contact-section-2{
+    width: 100%;
+    padding: 0;
+}
+
+.contact-direct{
+    align-items: center;
+}
+
+.newletter{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-section-2{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.contact-socialmedia{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.icons-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+.icon img{
+    width: 150%;
+    cursor: pointer;
+}
+
+.contact-findus{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+
+
+}
+
+
+
+@media(max-width: 390px){
+    
+
+header{
+        padding: 5px;
+        height: 55px;
+    }
+#home{
+    padding: 5px;
+    margin: 50px;
+}
+#home img{
+    margin-top: 20px;
+}
+
+
+#about{
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.about-info-cards{
+    height: 0px;
+    position: absolute;
+    top: 270px;
+    border: var(--letters-secondary) 0.5px solid;
+}
+.about-info-cards .card{
+    /* position: absolute; */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    background: transparent;
+}
+.card img{
+    width: 100px;
+}
+
+.about-text{
+    flex-direction: column;
+    padding-top: 150px;
+    margin-top: -20px;
+}
+
+.hero-secondary{
+    position: absolute;
+    top: 600px;
+    /* justify-content: space-between; */
+}
+.hero-secondary-img-1{
+    display: none;
+}
+
+.img-container img{
+    width: 50%;
+    height: auto;
+}
+.hero-cta h1{
+    font-size: 65px;
+}
+
+.hero-cta{
+    height: 50px;
+    margin: 0px;
+}
+
+.hero-secondary-img-2{
+    position: absolute;
+    left: 0px;
+}
+.hero-secondary-img-3{
+    position: absolute;
+    right: 0;
+}
+
+.hero-secondary-img-3 img{
+    width: 250px;
+    height: 350px;
+}
+
+
+.hero-cta{
+    height: 120px;
+    width: 390px;
+    margin-top: 200px;
+
+}
+
+/* -----------PRODUCTS-------------- */
+#Products{
+    margin-top: 320px;
+}
+
+#btn-cta span{
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-style: italic;
+    font-size: 12px;
+}
+
+
+/* -----------CONTACT-------------- */
+#Contact{
+    flex-direction: column;
+    justify-content:center;
+    padding: 10px;
+    gap: 25px;
+}
+
+.input-group{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.input-group input{
+    max-width: 200px;
+    height: 50px;
+}
+.icons-social{
+    gap: 60px;
+}
+.icon img{
+    width: 50px;
+}
+
+.contact-findus iframe{
+    width: 350px;
+}
+
+
+
+
+
+}
