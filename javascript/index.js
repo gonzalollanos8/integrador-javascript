@@ -2,6 +2,9 @@
 const containerProd = document.querySelector('.Products-card');
 const seeMore = document.querySelector('.seeMore');
 const addProd = document.getElementById('.btnAdd');
+const cartBtn = document.querySelector('.buy-cart');
+const menuBtn = document.querySelector('.menu-burger');
+
 
 //categorias para filtros
 const filterContainer = document.querySelector('#dropdown')
@@ -35,6 +38,12 @@ const renderCard = (productList) =>{
 
     containerProd.innerHTML += productList.map(createCard).join('');
 };
+//-------logica de menu/carrito--------------
+const toggleCart = () =>{
+
+}
+
+
 
 
 //-------logica de filtros--------------
@@ -116,6 +125,7 @@ const init = () =>{
     renderCard(appState.products[0]);
     seeMore.addEventListener('click', seeMoreProducts);
     filterContainer.addEventListener('click', applyFilter);
+    
 }
 
 
