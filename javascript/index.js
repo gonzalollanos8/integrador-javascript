@@ -7,7 +7,7 @@ const menuBtn = document.querySelector('.menu-burger');
 
 
 //categorias para filtros
-const filterContainer = document.querySelector('#dropdown')
+const filterContainer = document.querySelector('.dropdown')
 const category = document.querySelectorAll('.category');
 
 //productos
@@ -51,7 +51,7 @@ const toggleCart = () =>{
 
 //funcion para cambiar la data del filtro activo (con el elemento data-)
 const changeFilter = (btn) =>{
-    // let {activeFilter} = appState;
+    let {activeFilter} = appState;
 
     appState.activeFilter = btn.dataset.category;
     
