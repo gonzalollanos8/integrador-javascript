@@ -33,25 +33,28 @@ const createCard = (prod) =>{
     `
 };
 
-//funcion render
+//funcion RENDER=====================
 const renderCard = (productList) =>{
 
     containerProd.innerHTML += productList.map(createCard).join('');
 };
-//-------logica de menu/carrito--------------
-const toggleCart = () =>{
 
+
+
+//==============================MENU/CARRITO===========================
+const toggleCart = () =>{
+    cartBtn.classList.toggle('open-cart')
 }
 
 
 
 
-//-------logica de filtros--------------
+//-------logica de FILTROS--------------
 
 
 //funcion para cambiar la data del filtro activo (con el elemento data-)
 const changeFilter = (btn) =>{
-    let {activeFilter} = appState;
+    // let {activeFilter} = appState;
 
     appState.activeFilter = btn.dataset.category;
     

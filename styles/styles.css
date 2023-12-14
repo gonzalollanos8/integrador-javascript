@@ -390,8 +390,8 @@ nav .action-responsive{
 
 /* --------------CARRITO---------------------- */
 #cart-container{
-    display: none;
-    /* display: flex; */
+    /* display: none; */
+    display: flex;
     flex-direction: column;
     position:absolute;
     top: 70px;
@@ -412,6 +412,18 @@ nav .action-responsive{
     font-weight: 800;
     font-size: 20px;
 
+}
+
+.cart-total{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 10px;
+    border-top: 1px solid var(--letters-secondary);
+    color: var(--letters);
+}
+.total-price{
+    font-size: 24px;
+    font-weight: 700;
 }
 
 
