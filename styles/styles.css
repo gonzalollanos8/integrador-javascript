@@ -21,10 +21,12 @@
         font-size: 14px;
         /* border: red 1px solid; */
 }
+
 body{
     background-image: url(../img/dunk\ fondo\ hero\ 1.png);
     background-repeat: no-repeat;
     background-color: var(--background);
+    scroll-behavior: smooth;
 }
 main{
     max-width: 1200px;
@@ -301,8 +303,6 @@ nav .action-responsive{
 }
 
 
-
-
 .Products-card{
     max-width: 1200px;
     display: flex;
@@ -389,9 +389,13 @@ nav .action-responsive{
 }
 
 /* --------------CARRITO---------------------- */
-#cart-container{
-    /* display: none; */
-    display: flex;
+.buy-cart{
+    cursor: pointer;
+}
+
+.cart-container{
+    /*display: none;
+    */display: flex;
     flex-direction: column;
     position:absolute;
     top: 70px;
@@ -401,17 +405,34 @@ nav .action-responsive{
     background-color: var(--background);
     border-radius:10px;
     border: 1px solid var(--back-cards);
+    z-index: 2;
+    transform: translate(200%);
+    transition: all .4s cubic-bezier(.92, .01, .35, .99);
     padding: 10px;
     -webkit-border-radius:10px;
     -moz-border-radius:10px;
     -ms-border-radius:10px;
     -o-border-radius:10px;
+    -webkit-transform: translate(200%);
+    -moz-transform: translate(200%);
+    -ms-transform: translate(200%);
+    -o-transform: translate(200%);
+    -webkit-transition: all .4s cubic-bezier(.92, .01, .35, .99);
+    -moz-transition: all .4s cubic-bezier(.92, .01, .35, .99);
+    -ms-transition: all .4s cubic-bezier(.92, .01, .35, .99);
+    -o-transition: all .4s cubic-bezier(.92, .01, .35, .99);
+}
+.cart-container-open{
+    transform: translate(0%);
+    -webkit-transform: translate(0%);
+    -moz-transform: translate(0%);
+    -ms-transform: translate(0%);
+    -o-transform: translate(0%);
 }
 .cart-title{
     color: var(--letters);
     font-weight: 800;
     font-size: 20px;
-
 }
 
 .cart-total{
@@ -447,7 +468,7 @@ nav .action-responsive{
 
 .prod-item-list{
     height: 70vh;
-    scroll-behavior: auto;
+    overflow-y: auto;
     /* background-color: #FF3333; */
 }
 
@@ -456,6 +477,7 @@ nav .action-responsive{
     align-items: center;
     /* justify-content: space-between; */
     text-align: left;
+    width: auto;
     margin: 20px;
     padding: 20px 0;
     border-top: 1.5px solid var(--letters-secondary);

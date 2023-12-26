@@ -51,18 +51,20 @@ header .action-desktop{
 }
 
 .menu-burger{
+    display: none;
+}
+.menu-burger-open{
     display: flex;
 }
-.menu-burger ul{
+
+.nav-options .open{
     display: none;
 }
 
 #toggle-menu{
     display: none;
 }
-#toggle-menu:checked ~ ul{
-    display: flex;
-}
+
 
 nav ul{
     flex-direction: column;

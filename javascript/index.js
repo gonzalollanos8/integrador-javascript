@@ -2,8 +2,7 @@
 const containerProd = document.querySelector('.Products-card');
 const seeMore = document.querySelector('.seeMore');
 const addProd = document.getElementById('.btnAdd');
-const cartBtn = document.querySelector('.buy-cart');
-const menuBtn = document.querySelector('.menu-burger');
+
 
 
 //categorias para filtros
@@ -38,13 +37,6 @@ const renderCard = (productList) =>{
 
     containerProd.innerHTML += productList.map(createCard).join('');
 };
-
-
-
-//==============================MENU/CARRITO===========================
-const toggleCart = () =>{
-    cartBtn.classList.toggle('open-cart')
-}
 
 
 
@@ -128,7 +120,7 @@ const init = () =>{
     renderCard(appState.products[0]);
     seeMore.addEventListener('click', seeMoreProducts);
     filterContainer.addEventListener('click', applyFilter);
-    
+    cartBtn.addEventListener('click', toggleCart);
 }
 
 
