@@ -17,7 +17,13 @@ const itemPrice = document.querySelector('.prod-item-price');
 
 
 //array para el carrito
-let cartArray = []
+let cartArray = JSON.parse(localStorage.getItem('cartArray')) || [];
+
+//funcion para guardar en el localStorage
+const saveCart = () =>{
+    localStorage.setItem('cartArray', JSON.stringify(cartArray));
+
+}
 
 //categorias para filtros
 const filterContainer = document.querySelector('.dropdown')
@@ -143,6 +149,18 @@ const cartRender = () =>{
     ListCart.innerHTML = cartArray.map(renderCartItem).join('')
 }
 
+//funcion para controlar todas las funciones del estado de carrito
+
+const updateCart = () =>{
+
+    saveCart();
+    cartRender();
+    showCartTotal();
+    disableBtn(buyCart);
+    disableBtn(removeCart); 
+
+}
+
 //funcion para agregar producto
 const addProduct = (e) =>{
     if(!e.target.classList.contains('btnAdd'))return
@@ -154,8 +172,7 @@ const addProduct = (e) =>{
         createCartProd(product);
     };
 
-    cartRender();
-    showCartTotal();
+    updateCart()
     console.log(cartArray);
 }
 
@@ -166,6 +183,14 @@ const addUnitProd = (product) =>{
             ?{...cartProd, quantity: cartProd.quantity + 1}
             :cartProd
         );
+}
+//funcion para restar una unidad del producto 
+const removeUnitProd = (existinCartProduct) =>{
+    cartArray = cartArray.map((product) =>{
+        return product.id === existinCartProduct.id 
+        ?{...product, quantity: product.quantity - 1}
+        :product
+    })
 }
 
 //funcion para saber si el producto ya existe en el carro
@@ -203,7 +228,7 @@ const renderCartItem = (cartArray) =>{
                 <div class="btn-amount">
                     <button class="remove" data-id=${id}>-</button>
                     <span class="quantity">${quantity}</span>
-                    <button class="add" data-id+${id}>+</button>
+                    <button class="add" data-id=${id}>+</button>
                 </div>
             
             <span class="prod-item-price">$${price*quantity}</span>
@@ -211,6 +236,43 @@ const renderCartItem = (cartArray) =>{
         </div>
 </div>
     `
+}
+
+//funcion para controlar el boton + de la lista en el carrito
+const handlerAddCart = (id) =>{
+    const addProdInCart = cartArray.find((item)=> item.id === id);
+    addUnitProd(addProdInCart)
+}
+//funcion para controlar el boton - del carrito 
+const handlerRemoveCart = (id) =>{
+    const existingCartProd = cartArray.find((item) => item.id === id);
+
+    if(existingCartProd.quantity === 1){
+        if(window.confirm('Delete product?')){
+            removeProdFromCart(existingCartProd);
+        }
+        return
+    }   
+
+    removeUnitProd(existingCartProd)
+    
+}
+const removeProdFromCart = (existingCartProd) =>{
+    cartArray = cartArray.filter ((product) => product.id !== existingCartProd.id)
+            updateCart()
+}
+
+//funcion manejadora de botones de add y remove
+const handlerQuantity = (e) =>{
+    if(e.target.classList.contains('add')){
+        console.log('add')
+        handlerAddCart(e.target.dataset.id); 
+    } else if(e.target.classList.contains('remove')){
+        handlerRemoveCart(e.target.dataset.id)
+    }
+
+    //controlar el estado del cart
+    updateCart()
 }
 
 //funcion para ver el total del carrito
@@ -221,7 +283,40 @@ const getCartTotal = ()=>{
 const showCartTotal=()=>{
     totalCart.innerHTML =`$${getCartTotal()}`
 }
+//funcion para desactivar los botones del carrito (sin productos)
+const disableBtn = (btnCart) =>{
+    if(!cartArray.length){
+        btnCart.classList.add('disabled');
+    }else{
+        btnCart.classList.remove('disabled');
+    }
+}
 
+
+
+//funcion para completar accion del carro
+const resetCartItem = () => {
+    cartArray = [];
+    updateCart()
+}
+
+const completeCartAction = (confirmMsg) =>{
+    if(!cartArray.length) return
+    if(window.confirm(confirmMsg)){
+        resetCartItem()
+        alert(successMsg)
+    }
+}
+
+//funcion para borrar todo el carro
+const deleteCart = () =>{
+    completeCartAction('Delete all cart?')
+    }
+
+//funcion para completar la compra
+const completeBuy = () =>{
+    completeCartAction('Finish buy?');
+}
 
 
 const init = () =>{
@@ -230,8 +325,15 @@ const init = () =>{
     seeMore.addEventListener('click', seeMoreProducts);
     filterContainer.addEventListener('click', applyFilter);
     cartBtn.addEventListener('click', toggleCart);
-    containerProd.addEventListener('click', addProduct)
-    document.addEventListener('DOMContentLoaded', cartRender)
+    containerProd.addEventListener('click', addProduct);
+    ListCart.addEventListener('click', handlerQuantity);
+    document.addEventListener('DOMContentLoaded', cartRender);
+
+    buyCart.addEventListener('click', completeBuy);
+    removeCart.addEventListener('click', deleteCart);
+
+    disableBtn(buyCart);
+    disableBtn(removeCart);
 }
 
 

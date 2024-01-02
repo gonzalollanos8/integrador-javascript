@@ -389,6 +389,18 @@ nav .action-responsive{
     padding: 15px;
     /* background: #f6f7fb; */
 }
+.seeMore button{
+    background-color: var(--btn);
+    color: var(--letters);
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: 400;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
 .hidden{
     display: none;
 }
@@ -622,6 +634,12 @@ font-variation-settings:
 }
 
 
+.disabled{
+background-color: var(--letters-secondary);
+color: var(--letters);
+cursor:not-allowed;
+border: none;
+};
 
 
 /* -------------------------BTN VER MAS------------------------------ */
