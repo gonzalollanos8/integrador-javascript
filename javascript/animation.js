@@ -4,7 +4,7 @@ const filter_menu = document.querySelector('.filters-btn');
 const cartBtn = document.querySelector('.buy-cart');
 const cartContainer = document.querySelector('.cart-container');
 const menuBtn = document.querySelector('.btn-toggle-menu');
-const burgerMenu = document.querySelector('.menu-burger ul')
+const burgerMenu = document.querySelector('.menu-burger')
 
 
 //abrir menu filtros

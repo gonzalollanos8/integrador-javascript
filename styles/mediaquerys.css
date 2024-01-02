@@ -18,6 +18,11 @@ body{
 .logo{
     order: 2;
 }
+
+.btn-toggle-menu{
+    display: flex;
+}
+
 nav{
     display: none;
     /* order: 1; */

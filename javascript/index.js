@@ -1,19 +1,33 @@
-//elementos del html
+//elementos del html de la pagina principal
 const containerProd = document.querySelector('.Products-card');
 const seeMore = document.querySelector('.seeMore');
 const addProd = document.getElementById('.btnAdd');
 
+//elementos de html del carrito
+const ListCart = document.querySelector('.prod-item-list');
+const totalCart = document.querySelector('.total-price');
+const buyCart = document.querySelector('.btn-action-buy');
+const removeCart = document.querySelector('.btn-action-rem');
 
+const btnAddItem = document.querySelector('.add');
+const totalItem = document.querySelector('.quantity');
+const btnRemoveItem = document.querySelector('.remove');
+const itemPrice = document.querySelector('.prod-item-price');
+
+
+
+//array para el carrito
+let cartArray = []
 
 //categorias para filtros
 const filterContainer = document.querySelector('.dropdown')
 const category = document.querySelectorAll('.category');
 
-//productos
+
 
 // template de card html
 const createCard = (prod) =>{
-    const {name,price,description,img}= prod
+    const {name,price,description,img,id}= prod
     
     return  `    
     <div class="Products-card-item">
@@ -26,7 +40,12 @@ const createCard = (prod) =>{
         <span>$${price}</span>
         </div>
     <div class="line thr">
-        <button class="btnAdd">+ Add cart</button>
+        <button class="btnAdd"
+        data-id='${id}'
+        data-price='${price}'
+        data-name='${name}'
+        data-img='${img}'
+        >+ Add cart</button>
         </div>
     </div>
     `
@@ -37,7 +56,6 @@ const renderCard = (productList) =>{
 
     containerProd.innerHTML += productList.map(createCard).join('');
 };
-
 
 
 
@@ -100,7 +118,6 @@ const inactiveFilter = (filter) =>{
 }
 
 //boton de ver mas
-
 const seeMoreProducts = () =>{
     appState.currentIndex += 1;
     
@@ -114,6 +131,98 @@ const seeMoreProducts = () =>{
 };
 
 
+//--------------------LOGICA DEL CARRITO---------------------
+
+//render mensaje del carrito vacio
+const cartRender = () =>{
+    if(!cartArray.length){
+        ListCart.innerHTML = `<p class='empty-msg'> Cart is empty </p>`;
+    return
+    };
+
+    ListCart.innerHTML = cartArray.map(renderCartItem).join('')
+}
+
+//funcion para agregar producto
+const addProduct = (e) =>{
+    if(!e.target.classList.contains('btnAdd'))return
+    const product = e.target.dataset;   
+    
+    if  (existingProdCart(product)){
+        addUnitProd(product);
+    }else{
+        createCartProd(product);
+    };
+
+    cartRender();
+    showCartTotal();
+    console.log(cartArray);
+}
+
+//funcion para agrgar una unidad de producto al carrito
+const addUnitProd = (product) =>{
+    cartArray = cartArray.map((cartProd) => 
+            cartProd.id === product.id
+            ?{...cartProd, quantity: cartProd.quantity + 1}
+            :cartProd
+        );
+}
+
+//funcion para saber si el producto ya existe en el carro
+const existingProdCart = (product) =>{
+    return cartArray.find((item) => item.id === product.id);
+}
+
+
+//funcion para crear array en el carrito
+const createCartProd = (product) =>{
+
+    cartArray = [...cartArray, {...product, quantity: 1}];
+}
+
+//funcion para renderizar el producto en el carrito
+const renderCartItem = (cartArray) =>{
+
+    const {img,quantity,name,price,id} = cartArray
+
+    return `
+    <div class="prod-item">
+    <img src="${img}" alt="${name}"/>
+    
+    <div class="prod-item-detail">
+
+        <div class="prod-item-title">
+            <p class="prod-info">${name}</p>
+            <span class="material-symbols-outlined">
+                delete
+                </span>
+        </div>           
+
+        <div class="prod-item-action">
+
+                <div class="btn-amount">
+                    <button class="remove" data-id=${id}>-</button>
+                    <span class="quantity">${quantity}</span>
+                    <button class="add" data-id+${id}>+</button>
+                </div>
+            
+            <span class="prod-item-price">$${price*quantity}</span>
+        </div>
+        </div>
+</div>
+    `
+}
+
+//funcion para ver el total del carrito
+const getCartTotal = ()=>{
+    return cartArray.reduce((acc, cur)=> acc+ Number(cur.price) * cur.quantity ,0)
+}
+//funcion para mostrar el total del carrito
+const showCartTotal=()=>{
+    totalCart.innerHTML =`$${getCartTotal()}`
+}
+
+
 
 const init = () =>{
 
@@ -121,6 +230,8 @@ const init = () =>{
     seeMore.addEventListener('click', seeMoreProducts);
     filterContainer.addEventListener('click', applyFilter);
     cartBtn.addEventListener('click', toggleCart);
+    containerProd.addEventListener('click', addProduct)
+    document.addEventListener('DOMContentLoaded', cartRender)
 }
 
 
