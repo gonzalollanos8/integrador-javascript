@@ -68,6 +68,15 @@ body{
     -o-border-radius: 5px;
 }
 
+.error input{
+    border: 1px solid #dc3545;
+}
+
+.success input{
+    border: 1px solid rgb(111, 221, 51);
+}
+
+
 
 .remember{
     display: flex;
