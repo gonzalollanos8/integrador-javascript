@@ -80,7 +80,7 @@ const checkEmail = (input)=> {
 
 const isPassSecure = (input) =>{
     const re = / ^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$ /;
-    return re.test(input.value);
+    return re.test(input.value.trim());
 };
 
 const checkPassword = (input) =>{
@@ -92,7 +92,9 @@ const checkPassword = (input) =>{
     }
 
     if(!isPassSecure(input)){
-        showError(input,"Pass contain: 8 characters, 1 Uppercase & 1 simbol"
+        showError(
+            input,
+            "Pass contain: 8 characters, 1 Uppercase & 1 simbol"
         );
         return;
     }
