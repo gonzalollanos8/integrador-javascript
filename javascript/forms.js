@@ -1,11 +1,16 @@
-const registerForm = document.getElementById('singup');
+const registerForm = document.getElementById('signup');
 
 const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const rePasswordInput = document.getElementById('re-enter password');
 
 
-const user = [];
+const user = JSON.parse(localStorage.getItem("user")) || [];
+//LS
+const saveToLocalStorage = () => {
+    localStorage.setItem("users", JSON.stringify(user));
+};
+
 //auxiliar
 
 //regex email
@@ -78,51 +83,73 @@ const checkEmail = (input)=> {
 
 //funcion para validar contrasena
 
-const isPassSecure = (input) =>{
-    const re = / ^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$ /;
+const isPassSecure = (input) => {
+    const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,}$/;
+
     return re.test(input.value.trim());
 };
 
-const checkPassword = (input) =>{
+const checkPassword = (input) => {
     let valid = false;
-    
-    if(isEmpty(input)){
-        showError(input,"input is empty");
-        return;
+
+    if (isEmpty(input)) {
+        showError(input, "Is empty");
     }
 
-    if(!isPassSecure(input)){
+    if (!isPassSecure(input)) {
         showError(
-            input,
-            "Pass contain: 8 characters, 1 Uppercase & 1 simbol"
+        input,
+        `"Must contain:1 Uppercase, 1 Number, 1 Simbol`
         );
         return;
-    }
 
+    }  
     showSuccess(input);
     valid = true;
     return valid;
-}
+};
 
-const checkRePassword = () =>{
+const checkRePassword = (input) =>{
     valid = false
     
-    if(passwordInput.value === rePasswordInput.value){
+    if(passwordInput.value !== rePasswordInput.value){
+        showError(input, "it doesn't match");
+        return;
+    }else{
         showSuccess(input)
         valid=true
         return valid;
-    }else{
-        showError(input, "it doesn't match");
-        return;
     }
 }
 
+//funcion para validar formulario
+const validateForm = (e) =>{
+    e.preventDefault();
+
+    let isEmailValid = checkEmail(emailInput);
+    let isPasswordValid = checkPassword(passwordInput);
+
+    let isValidForm = isEmailValid && isPasswordValid;
+
+    if(isValidForm){
+        user.push({
+            email: emailInput.value,
+            password: passwordInput.value
+        });
+
+        saveToLocalStorage(user);
+        alert('create new user!');
+        window.location.href = 'login.html';
+    }
+}
 
 //funcion init
 const init = () =>{
+
     emailInput.addEventListener('input', () => checkEmail(emailInput));
     passwordInput.addEventListener('input',()=>checkPassword(passwordInput));
     rePasswordInput.addEventListener('input', () => checkRePassword(rePasswordInput));
+    registerForm.addEventListener('submit', validateForm)    
 }
 
 init()
