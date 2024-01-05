@@ -144,3 +144,9 @@ body{
     width: 90%;
     padding: 50px;
 }
+
+#formError{
+    color:#dc3545;
+    text-align:center;
+    font-weight: 800;
+}

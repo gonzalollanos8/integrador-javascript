@@ -4,7 +4,7 @@ const emailInput = document.getElementById('email');
 const passwordInput = document.getElementById('password');
 const formError = document.getElementById('formError');
 
-const users = JSON.parse(localStorage.getItem('users')) || [];
+const users = JSON.parse(localStorage.getItem("users")) || [];  
 
 const isEmpty = (input) =>{
     return !input.value.trim().length;
@@ -15,9 +15,9 @@ const isExistEmail = (input) =>{
 };
 //coincide la contrena
 const isMatchingPass = (input) => {
-    const users = users.find((user) => user.email === emailInput.value.trim());
+    const user = users.find((user) => user.email === emailInput.value.trim());
 
-    return users.password === input.value.trim();
+    return user.password === input.value.trim();
 };
 
 const showError = (msg) =>{
@@ -67,7 +67,10 @@ const login = (e) =>{
     e.preventDefault();
 
     if(isValidAccount()){
-        alert('Welcome')
+        
+        window.location.href = '../index.html';
+        alert('Welcome');
+
     }
 
 }

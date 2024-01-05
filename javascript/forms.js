@@ -5,7 +5,7 @@ const passwordInput = document.getElementById('password');
 const rePasswordInput = document.getElementById('re-enter password');
 
 
-const user = JSON.parse(localStorage.getItem("user")) || [];
+const user = JSON.parse(localStorage.getItem("users")) || [];
 //LS
 const saveToLocalStorage = () => {
     localStorage.setItem("users", JSON.stringify(user));
