@@ -120,9 +120,18 @@ nav .action-responsive{
     padding: 0;
 }
 
+/* ---------------CART-------------------- */
 
-
-
+.cart-container{
+    width: 80vw;
+}
+/* -------------FILTER-------------------- */
+.dropdown{
+    top: 105em;
+    width: 300px;
+    height: 250px;
+    gap: 20px;
+}
 
 
 /* -----------------------------LOG IN-------------------------------------- */
@@ -229,11 +238,19 @@ main{
     gap: 25px;
 }
 
+.dropdown{
+    top: 87em;
+    width: 300px;
+    height: 250px;
+    gap: 20px;
+}
 
-
+.cart-container{
+    width: 90vw;
 }
 
 
+}
 
 @media(max-width: 390px){
     
@@ -368,6 +385,15 @@ header{
 
 
 
+.dropdown{
+    top: 61em;
+    width: 80vw;
+    height: 250px;
+    gap: 20px;
+}
 
+.cart-container{
+    width: 100vw;
+}
 
 }
